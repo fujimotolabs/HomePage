@@ -21,6 +21,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./my-vue-app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,6 +35,7 @@ jobs:
           cache-dependency-path: ./my-vue-app/package-lock.json
       - name: Install dependencies
         run: npm ci
+        working-directory: ./my-vue-app
       - name: Build
         run: npm run build
       - name: Setup Pages
