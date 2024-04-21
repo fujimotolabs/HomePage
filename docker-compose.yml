@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    image: node:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./my-vue-app:/my-vue-app
+    tty: true
+    working_dir: /my-vue-app
+    # command: ["npx", "vite", "preview", "--port", "5000", "--host"]
