@@ -16,7 +16,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # デプロイするだけなので、単一のデプロイジョブ
   deploy:
     environment:
       name: github-pages
