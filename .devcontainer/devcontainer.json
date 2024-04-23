@@ -8,10 +8,12 @@
       "extensions": [
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "Vue.volar",
         "esbenp.prettier-vscode",
         "DavidAnson.vscode-markdownlint",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "dbaeumer.vscode-eslint",
+        "Vue.volar",
+        "hollowtree.vue-snippets"
       ]
     }
   }

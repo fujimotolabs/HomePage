@@ -1,5 +1,5 @@
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+<script setup lang="ts">
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
@@ -12,7 +12,6 @@ import HelloWorld from "./components/HelloWorld.vue";
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <p>ああああ</p>
 </template>
 
 <style scoped>

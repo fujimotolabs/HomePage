@@ -8,9 +8,18 @@
 2. 別の Powershell で`ssh -V`してバージョンが上がっていれば完了
 
 3. `Get-Service ssh-agent`で`Running`以外の場合は、`Start-Service ssh-agent`を実行
-4. `ssh-add`を実行し、local 環境の ssh 鍵を取り込む
+4. `ssh-add`を実行し、local 環境の ssh 鍵を取り込む(鍵の名前を id_rsa 以外などの特殊な羅列してる場合はパスを通す)
 5. `~\HomePage>`から`code .`実行(wsl からではだめ)
 6. `shift+CTRL+P`で`devcontainer:rebuild`
+
+### macOS の場合
+
+1. macOS にはデフォルトで OpenSHH がインストールされてる
+2. ssh-agent 起動して、windows の`4. ~ 6.`参考に実行
+
+### linux の場合
+
+openSHH ダウンロードして、あとは同じ
 
 ## GitHub Pages
 
