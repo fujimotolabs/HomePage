@@ -1,23 +1,27 @@
-## devcontainerの起動の仕方
+# 藤本研究室ホームページ
 
-1. /.devcontainer内に.envファイルを作成
-2. envファイルを内容を
-```
-KEY_NAME=/.ssh以下のkeyの名前に変更
-(例)　github, id_rsaなどなど
-```
-3. ホストOS側に、/.ssh/configがなければ、
-```
+## devcontainer の起動の仕方
+
+1. /.devcontainer 内に.env ファイルを作成
+2. env ファイルを内容を
+
+   ```bash
+   KEY_NAME=/.ssh以下のkeyの名前に変更
+   (例)　github, id_rsaなどなど
+   ```
+
+3. ホスト OS 側に、/.ssh/config がなければ、
+
+```bash
 Host github.com
   IdentityFile ~/.ssh/keyの名前
   User git
 ```
 
-## GitHub Pages　
-```main```ブランチに、PRかPUSH(管理者以外不可)のときに、github/actionsにてbuildおよびdeploy 
+## GitHub Pages
+
+`main`ブランチに、PR か PUSH(管理者以外不可)のときに、github/actions にて build および deploy
 
 ## 技術選定
-vite + Vue3 
 
-
-
+vite + Vue3
