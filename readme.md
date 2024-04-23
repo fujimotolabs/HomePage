@@ -1,22 +1,16 @@
 # 藤本研究室ホームページ
 
-## devcontainer の起動の仕方
+## devcontainer の中での ssh よる github の接続方法
 
-1. /.devcontainer 内に.env ファイルを作成
-2. env ファイルを内容を
+### windows の場合
 
-   ```bash
-   KEY_NAME=/.ssh以下のkeyの名前に変更
-   (例)　github, id_rsaなどなど
-   ```
+1. 管理者権限の PowerShell で `winget install Microsoft.OpenSSH.Beta --override ADDLOCAL=Client`
+2. 別の Powershell で`ssh -V`してバージョンが上がっていれば完了
 
-3. ホスト OS 側に、/.ssh/config がなければ、
-
-```bash
-Host github.com
-  IdentityFile ~/.ssh/keyの名前
-  User git
-```
+3. `Get-Service ssh-agent`で`Running`以外の場合は、`Start-Service ssh-agent`を実行
+4. `ssh-add`を実行し、local 環境の ssh 鍵を取り込む
+5. `~\HomePage>`から`code .`実行(wsl からではだめ)
+6. `shift+CTRL+P`で`devcontainer:rebuild`
 
 ## GitHub Pages
 

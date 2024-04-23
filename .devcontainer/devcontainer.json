@@ -3,11 +3,6 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/app",
-  "mounts": [
-    "source=${localEnv:HOME}/.ssh/$KEY_NAME.pub,target=/root/.ssh/$KEY_NAME.pub,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.ssh/$KEY_NAME,target=/root/.ssh/$KEY_NAME,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.ssh/config,target=/root/.ssh/config,type=bind,consistency=cached"
-  ],
   "customizations": {
     "vscode": {
       "extensions": [
