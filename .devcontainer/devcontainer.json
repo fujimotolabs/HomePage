@@ -1,6 +1,16 @@
 {
-  "name": "vite + vue3",
+  "name": "My Dev Container",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/app"
+  "workspaceFolder": "/app",
+  "containerEnv": {
+    "SSH_AUTH_SOCK": "/private/tmp/com.apple.launchd.kVZkrb2dli/Listeners" // SSH_AUTH_SOCKのパスをMacに合わせて変更
+  },
+  "mounts": [
+    "source=/private/tmp/com.apple.launchd.kVZkrb2dli/Listeners,target=/private/tmp/com.apple.launchd.kVZkrb2dli/Listeners,type=bind", // マウントポイントをMacに合わせて変更
+    "source=${localEnv:HOME}/.ssh/github.pub,target=/root/.ssh/github.pub,type=bind,consistency=cached", // 公開鍵をマウント
+    "source=${localEnv:HOME}/.ssh/github,target=/root/.ssh/github,type=bind,consistency=cached", // 秘密鍵をマウント
+    "source=${localEnv:HOME}/.ssh/config,target=/root/.ssh/config,type=bind,consistency=cached" // 秘密鍵をマウント
+    
+  ]
 }
