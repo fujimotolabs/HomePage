@@ -3,9 +3,10 @@ services:
   app:
     image: node:latest
     ports:
-      - 5000:5000
+      - 4173:4173 #preview server
+      - 5173:5173 #dev server
     volumes:
-      - ./my-vue-app:/my-vue-app
+      - .:/app
     tty: true
-    working_dir: /my-vue-app
-    # command: ["npx", "vite", "preview", "--port", "5000", "--host"]
+    working_dir: /app/my-vue-app
+    command: sh -c "npm install && npm run dev"
