@@ -8,7 +8,9 @@ const routes = [
   },
   {
     path: "/labMember",
-    component: () => import("./views/LabMemberContainer.vue"),
+    component: async () => {
+      return await import("@/views/LabMemberContainer.vue");
+    },
   },
 ];
 export const router = createRouter({
