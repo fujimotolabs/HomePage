@@ -17,6 +17,17 @@
 1. macOS にはデフォルトで OpenSHH がインストールされてる
 2. ssh-agent 起動して、windows の`4. ~ 6.`参考に実行
 
+#### おすすめ
+
+    ~/.zprofile に(なければ作成)以下入力
+
+    ```bash
+    eval "$(ssh-agent)"
+    ssh-add --apple-use-keychain ~/your ssh key path
+    ```
+
+`your ssh key path`は、秘密鍵の方(.pub じゃない方)の絶対パスを入力
+
 ### linux の場合
 
 openSHH ダウンロードして、あとは同じ
