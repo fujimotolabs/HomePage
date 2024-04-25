@@ -9,14 +9,14 @@ export default defineConfig({
     port: 5173,
   },
   plugins: [vue(), tsConfigPaths()],
-  base: "/HomePage/",
+  base: process.env.NODE_ENV === "production" ? "/HomePage/" : "./",
+  build: {
+    outDir: "docs",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
       "~": path.resolve(__dirname, "public"),
     },
-  },
-  build: {
-    outDir: "dist", // ビルド成果物の出力先を指定
   },
 });
