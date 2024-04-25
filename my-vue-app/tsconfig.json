@@ -16,7 +16,7 @@
       "@/*": ["src/*"],
       "~/*": ["public/*"]
     },
-    "outDir": "./dist",
+    "outDir": "./docs",
     "sourceMap": false,
     "declaration": false
   },
