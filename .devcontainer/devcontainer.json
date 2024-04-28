@@ -2,7 +2,7 @@
   "name": "My Dev Container",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/app/my-vue-app",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,7 +13,8 @@
         "yzhang.markdown-all-in-one",
         "dbaeumer.vscode-eslint",
         "Vue.volar",
-        "hollowtree.vue-snippets"
+        "hollowtree.vue-snippets",
+        "vuetifyjs.vuetify-vscode"
       ]
     }
   }
