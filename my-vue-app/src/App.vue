@@ -4,7 +4,7 @@ import { RouterView } from "vue-router";
 
 <template>
   <v-app>
-    <v-layout class="rounded rounded-md">
+    <v-layout class="rounded-md">
       <v-app-bar title="Application bar"></v-app-bar>
 
       <v-navigation-drawer>

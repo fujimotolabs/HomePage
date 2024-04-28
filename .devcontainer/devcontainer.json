@@ -2,7 +2,7 @@
   "name": "My Dev Container",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/app/my-vue-app",
+  "workspaceFolder": "/app",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,7 +14,8 @@
         "dbaeumer.vscode-eslint",
         "Vue.volar",
         "hollowtree.vue-snippets",
-        "vuetifyjs.vuetify-vscode"
+        "vuetifyjs.vuetify-vscode",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   }
