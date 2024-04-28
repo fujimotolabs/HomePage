@@ -13,7 +13,9 @@
         "yzhang.markdown-all-in-one",
         "dbaeumer.vscode-eslint",
         "Vue.volar",
-        "hollowtree.vue-snippets"
+        "hollowtree.vue-snippets",
+        "vuetifyjs.vuetify-vscode",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   }
