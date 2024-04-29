@@ -12,9 +12,12 @@ export type LabMember = Coproduct<{
     kanjiName: string;
     kanaName: string;
     grade: Grade;
+    researchField: "高性能計算" | "モバイルコンピューティング";
   };
   Professor: {
-    name: string;
+    kanjiName: string;
+    kanaName: string;
+    researchField: "高性能計算" | "モバイルコンピューティング";
   };
 }>;
 export type LabMembers = LabMember[];

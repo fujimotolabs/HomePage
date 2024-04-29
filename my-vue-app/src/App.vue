@@ -4,7 +4,7 @@ import { RouterView, RouterLink } from "vue-router";
 
 <template>
   <v-app>
-    <v-layout class="rounded-md">
+    <v-layout class="rounded-md overflow-hidden h-screen w-screen">
       <v-app-bar title="Application bar"></v-app-bar>
 
       <v-navigation-drawer>
@@ -18,7 +18,7 @@ import { RouterView, RouterLink } from "vue-router";
         </v-list>
       </v-navigation-drawer>
 
-      <v-main>
+      <v-main class="h-full w-full overflow-auto">
         <router-view v-slot="{ Component, route }">
           <transition name="fade" mode="out-in">
             <div :key="route.fullPath">
