@@ -1,22 +1,33 @@
-<script setup lang="ts">
-import { RouterView } from "vue-router";
-</script>
-
 <template>
-  <RouterView />
+  <v-app>
+    <v-layout class="rounded-md overflow-hidden h-screen w-screen">
+      <v-app-bar title="Application bar"></v-app-bar>
+
+      <v-navigation-drawer>
+        <v-list>
+          <v-list-item>
+            <router-link to="/">Go to Home</router-link>
+          </v-list-item>
+          <v-list-item>
+            <router-link to="/labMember">Go to Lab Member</router-link>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-main class="h-full w-full overflow-auto">
+        <router-view v-slot="{ Component, route }">
+          <transition
+            enter-active-class="animate__animated animate__backInDown"
+            leave-active-class="animate__animated animate__backOutDown"
+          >
+            <div :key="route.fullPath">
+              <component :is="Component" />
+            </div>
+          </transition>
+        </router-view>
+      </v-main>
+    </v-layout>
+  </v-app>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>
