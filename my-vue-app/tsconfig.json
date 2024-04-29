@@ -18,7 +18,8 @@
     },
     "outDir": "./dist",
     "sourceMap": false,
-    "declaration": false
+    "declaration": false,
+    "types": ["vuetify"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

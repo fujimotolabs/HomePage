@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { RouterView, RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -9,13 +9,36 @@ import { RouterView } from "vue-router";
 
       <v-navigation-drawer>
         <v-list>
-          <v-list-item title="Navigation drawer"></v-list-item>
+          <v-list-item>
+            <router-link to="/">Go to Home</router-link>
+          </v-list-item>
+          <v-list-item>
+            <router-link to="/labMember">Go to Lab Member</router-link>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
 
       <v-main>
-        <RouterView />
+        <router-view v-slot="{ Component, route }">
+          <transition name="fade" mode="out-in">
+            <div :key="route.fullPath">
+              <component :is="Component" />
+            </div>
+          </transition>
+        </router-view>
       </v-main>
     </v-layout>
   </v-app>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  will-change: opacity;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
