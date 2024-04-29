@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouterView, RouterLink } from "vue-router";
-</script>
-
 <template>
   <v-app>
     <v-layout class="rounded-md overflow-hidden h-screen w-screen">
@@ -20,7 +16,10 @@ import { RouterView, RouterLink } from "vue-router";
 
       <v-main class="h-full w-full overflow-auto">
         <router-view v-slot="{ Component, route }">
-          <transition name="fade" mode="out-in">
+          <transition
+            enter-active-class="animate__animated animate__backInDown"
+            leave-active-class="animate__animated animate__backOutDown"
+          >
             <div :key="route.fullPath">
               <component :is="Component" />
             </div>
@@ -31,14 +30,4 @@ import { RouterView, RouterLink } from "vue-router";
   </v-app>
 </template>
 
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  will-change: opacity;
-  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style></style>
