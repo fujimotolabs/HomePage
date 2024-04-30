@@ -18,7 +18,7 @@
         <router-view v-slot="{ Component, route }">
           <transition
             enter-active-class="animate__animated animate__backInDown"
-            leave-active-class="animate__animated animate__backOutDown"
+            leave-active-class="animate__animated animate__fadeOut"
           >
             <div :key="route.fullPath">
               <component :is="Component" />

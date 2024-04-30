@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { LabMembers, Student } from "@/type";
+import { Professor } from "@/type";
 
 defineProps<{
-  items: LabMembers;
-  headers: { title: string; key: keyof Omit<Student, "type"> }[];
+  items: Professor[];
+  headers: { title: string; key: keyof Omit<Professor, "type"> }[];
 }>();
 type SortItem = {
-  key: keyof Omit<Student, "type">;
+  key: keyof Omit<Professor, "type">;
   order?: "asc" | "desc";
 };
-const sortItems: SortItem[] = [{ key: "grade", order: "desc" }];
+const sortItems: SortItem[] = [{ key: "kanaName", order: "asc" }];
 </script>
 <template>
   <div>
@@ -27,12 +27,11 @@ const sortItems: SortItem[] = [{ key: "grade", order: "desc" }];
       </template>
       <template v-slot:item="{ item, index }">
         <tr
-          v-if="item.type === 'Student'"
+          v-if="item.type === 'Professor'"
           :class="{ 'bg-slate-200': index % 2 != 0 }"
         >
           <td>{{ item.kanjiName }}</td>
           <td>{{ item.kanaName }}</td>
-          <td>{{ item.grade }}</td>
           <td>{{ item.researchField }}</td>
         </tr>
       </template>

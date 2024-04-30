@@ -1,44 +1,37 @@
 <script setup lang="ts">
 import StudentTable from "@/components/table/studentTable.vue";
-import { Student, Grade, LabMembers } from "@/type";
+import { Student, Professor } from "@/type";
+import { students, professors } from "@/data/LabMembers";
+import ProfessorTable from "@/components/table/ProfessorTable.vue";
 
-const items: LabMembers = [
-  {
-    type: "Student",
-    kanaName: "スギモト エイ",
-    kanjiName: "杉本 英",
-    grade: Grade.M1,
-    researchField: "高性能計算",
-  },
-  {
-    type: "Student",
-    kanaName: "サカタ ヤマト",
-    kanjiName: "坂田 倭都",
-    grade: Grade.M1,
-    researchField: "高性能計算",
-  },
-  {
-    type: "Student",
-    kanaName: "オオシカ ショウイチ",
-    kanjiName: "大鹿 祥一",
-    grade: Grade.M1,
-    researchField: "高性能計算",
-  },
+const studentHeaders: {
+  title: string;
+  key: Required<keyof Omit<Student, "type">>;
+  sortable: boolean;
+}[] = [
+  { title: "名前", key: "kanjiName", sortable: true },
+  { title: "カナ名", key: "kanaName", sortable: true },
+  { title: "学年", key: "grade", sortable: true },
+  { title: "研究分野", key: "researchField", sortable: true },
 ];
-
-const headers: { title: string; key: Required<keyof Omit<Student, "type">> }[] =
-  [
-    { title: "名前", key: "kanjiName" },
-    { title: "フリガナ", key: "kanaName" },
-    { title: "学年", key: "grade" },
-    { title: "研究分野", key: "researchField" },
-  ];
+const professorHeaders: {
+  title: string;
+  key: Required<keyof Omit<Professor, "type">>;
+  sortable: boolean;
+}[] = [
+  { title: "名前", key: "kanjiName", sortable: true },
+  { title: "カナ名", key: "kanaName", sortable: true },
+  { title: "研究分野", key: "researchField", sortable: true },
+];
 </script>
 
 <template>
   <div>
-    <div class="text-3xl font-mono">学生一覧</div>
-
-    <StudentTable :items="items" :headers="headers" />
+    <div class="flex flex-col gap-3">
+      <div class="text-3xl font-bold flex justify-center">Professor</div>
+      <ProfessorTable :items="professors" :headers="professorHeaders" />
+      <div class="text-3xl font-bold flex justify-center">Student</div>
+      <StudentTable :items="students" :headers="studentHeaders" />
+    </div>
   </div>
 </template>
