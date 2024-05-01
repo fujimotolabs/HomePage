@@ -1,0 +1,146 @@
+import { Grade, Professor, Student } from "@/type";
+
+export const professors: Professor[] = [
+  {
+    kanjiName: "藤本 典幸",
+    kanaName: "フジモト ノリユキ",
+    researchField: "高性能計算",
+    type: "Professor",
+  },
+  {
+    kanjiName: "勝間 亮",
+    kanaName: "カツマ リョウ",
+    researchField: "モバイルコンピューティング",
+    type: "Professor",
+  },
+];
+
+export const students: Student[] = [
+  {
+    type: "Student",
+    kanjiName: "杉本 英",
+    kanaName: "スギモト エイ",
+    grade: Grade.M1,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "坂田 倭都",
+    kanaName: "サカタ ヤマト",
+    grade: Grade.M1,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "大鹿 祥一",
+    kanaName: "オオシカ ショウイチ",
+
+    grade: Grade.M1,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "足立 直樹",
+    kanaName: "アダチ ナオキ",
+    grade: Grade.M1,
+    researchField: "モバイルコンピューティング",
+  },
+  {
+    type: "Student",
+    kanjiName: "江本 裕紀",
+    kanaName: "エモト ヒロキ",
+    grade: Grade.M1,
+    researchField: "モバイルコンピューティング",
+  },
+  {
+    type: "Student",
+    kanjiName: "川瀬 功大",
+    kanaName: "カワセ コウダイ",
+    grade: Grade.M1,
+    researchField: "モバイルコンピューティング",
+  },
+  {
+    type: "Student",
+    kanjiName: "谷口 弘通",
+    kanaName: "タニグチ ヒロミチ",
+    grade: Grade.M2,
+    researchField: "モバイルコンピューティング",
+  },
+  {
+    type: "Student",
+    kanjiName: "田道 竜大",
+    kanaName: "タミチ リュウト",
+    grade: Grade.M2,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: " 萩原 拓実",
+    kanaName: "ハギワラ タクミ",
+    grade: Grade.M2,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "登尾 幸二朗",
+    kanaName: "ノボリオ コウジロウ",
+    grade: Grade.M2,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "LINSSEN MATTHIAS",
+    kanaName: "リンセン マティアス",
+    grade: Grade.M2,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "岩田 淳志",
+    kanaName: "イワタ アツシ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "多胡 和馬",
+    kanaName: "タゴ カズマ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "眞鍋 拓人",
+    kanaName: "マナベ タクト",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "高橋 諒",
+    kanaName: "タカハシ リョウ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "岸田 佳樹",
+    kanaName: "キシダ ヨシキ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "駒谷 剛志",
+    kanaName: "コマヤ ツヨシ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+  {
+    type: "Student",
+    kanjiName: "大崎 有一朗",
+    kanaName: "オオサキ ユウイチロウ",
+    grade: Grade.B4,
+    researchField: "高性能計算",
+  },
+];
