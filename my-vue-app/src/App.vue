@@ -1,15 +1,19 @@
 <template>
   <v-app>
     <v-layout class="rounded-md overflow-hidden h-screen w-screen">
-      <v-app-bar title="Application bar"></v-app-bar>
+      <v-app-bar title="Application bar" />
 
       <v-navigation-drawer>
         <v-list>
           <v-list-item>
-            <router-link to="/">Go to Home</router-link>
+            <router-link to="/">
+              Go to Home
+            </router-link>
           </v-list-item>
           <v-list-item>
-            <router-link to="/labMember">Go to Lab Member</router-link>
+            <router-link to="/labMember">
+              Go to Lab Member
+            </router-link>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -18,7 +22,7 @@
         <router-view v-slot="{ Component, route }">
           <transition
             enter-active-class="animate__animated animate__backInDown"
-            leave-active-class="animate__animated animate__backOutDown"
+            leave-active-class="animate__animated animate__fadeOut"
           >
             <div :key="route.fullPath">
               <component :is="Component" />
