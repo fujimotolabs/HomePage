@@ -1,4 +1,4 @@
- on:
+on:
   issues:
     types: [opened]
 name: Issues
@@ -9,3 +9,5 @@ jobs:
     steps:
       - name: Assign author to issue
         uses: technote-space/assign-author@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
