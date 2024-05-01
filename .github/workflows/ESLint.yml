@@ -27,7 +27,10 @@ jobs:
           cache: "npm"
           cache-dependency-path: ./my-vue-app/package-lock.json
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm list eslint
+          npx eslint --version
       - name: Add eslint to PATH
         run: echo "$(npm bin)" >> $GITHUB_PATH
       - name: Run ESLint Reviewdog
