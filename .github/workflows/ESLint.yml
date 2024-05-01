@@ -14,12 +14,14 @@ permissions:
 jobs:
   eslint:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./my-app-vue
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install ESLint and eslint-plugin-vue
+      - name: Install ESLint and eslint-plugin-vue and typescript-eslint/eslint-plugin and typescript-eslint/parser
         run: |
           npm install eslint@8.10.0
           npm install @microsoft/eslint-formatter-sarif@2.1.7
