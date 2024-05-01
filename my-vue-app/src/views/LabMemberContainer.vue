@@ -37,8 +37,13 @@ const headers: { title: string; key: Required<keyof Omit<Student, "type">> }[] =
 
 <template>
   <div>
-    <div class="text-3xl font-mono">学生一覧</div>
+    <div class="text-3xl font-mono">
+      学生一覧
+    </div>
 
-    <StudentTable :items="items" :headers="headers" />
+    <StudentTable
+      :items="items"
+      :headers="headers"
+    />
   </div>
 </template>

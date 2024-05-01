@@ -19,16 +19,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install ESLint
+           - name: Install ESLint and eslint-plugin-vue
         run: |
           npm install eslint@8.10.0
           npm install @microsoft/eslint-formatter-sarif@2.1.7
+          npm install eslint-plugin-vue@8.5.0
 
       - name: Run ESLint
         run: |
-          npx eslint my-app-vue
+          npx eslint ../../my-app-vue
             --config .eslintrc.js
-            --ext .js,.jsx,.ts,.tsx
+            --ext .js,.jsx,.ts,.tsx,.vue
             --format json
             --output-file eslint-results.json
         continue-on-error: true

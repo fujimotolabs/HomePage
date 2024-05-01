@@ -1,8 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 export type Coproduct<T extends Record<keyof any, {}>> = {
   [K in keyof T]: Record<"type", K> & T[K];
 }[keyof T];
 
 export type Individual<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   TCoproduct extends Record<"type", keyof any>,
   Tag extends TCoproduct["type"]
 > = Extract<TCoproduct, Record<"type", Tag>>;
