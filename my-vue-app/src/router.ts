@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/",
     component: async () => {
-      return await import("@/views/Home.vue");
+      return await import("@/views/HomeContainer.vue");
     },
   },
   {
