@@ -29,7 +29,7 @@ jobs:
         working-directory: my-vue-app/src
 
       - name: Run ESLint
-        run: npx eslint --ext .ts,vue --ignore-path .gitignore . --format json --output-file eslint-results.json
+        run: npx eslint --ext .ts,vue . --format json --output-file eslint-results.json
         continue-on-error: true
         working-directory: my-vue-app/src
 
