@@ -26,12 +26,13 @@ jobs:
 
       - name: Run ESLint
         run: |
-          npx eslint ./src
+          npx eslint .
             --config .eslintrc.js
             --ext .js,.jsx,.ts,.tsx,.vue
             --format json
             --output-file eslint-results.json
         continue-on-error: true
+        working-directory: ./my-app-vue/src
 
       - name: Convert ESLint results to SARIF
         run: |
