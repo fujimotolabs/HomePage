@@ -19,6 +19,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: reviewdog/action-eslint@v1
         with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: github-check
-        eslint_flags: "src/"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-check
+          eslint_flags: "src/"
