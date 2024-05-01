@@ -32,7 +32,7 @@ jobs:
             --format json
             --output-file eslint-results.json
         continue-on-error: true
-        working-directory: my-app-vue/src
+        working-directory: my-vue-app/src
 
       - name: Convert ESLint results to SARIF
         run: |
