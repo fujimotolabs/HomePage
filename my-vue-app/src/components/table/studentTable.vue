@@ -8,15 +8,22 @@ defineProps<{
 </script>
 <template>
   <div>
-    <v-data-table-virtual :headers="headers" :items="items">
-      <template v-slot:headers>
+    <v-data-table-virtual
+      :headers="headers"
+      :items="items"
+    >
+      <template #headers>
         <tr class="bg-blue-500">
-          <th v-for="header in headers" :key="header.title" class="text-white">
+          <th
+            v-for="header in headers"
+            :key="header.title"
+            class="text-white"
+          >
             <span class="font-bold"> {{ header.title }}</span>
           </th>
         </tr>
       </template>
-      <template v-slot:item="{ item, index }">
+      <template #item="{ item, index }">
         <tr
           v-if="item.type === 'Student'"
           :class="{ 'bg-slate-200': index % 2 != 0 }"
