@@ -18,17 +18,17 @@ jobs:
       run:
         working-directory: my-vue-app
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: "npm"
-        cache-dependency-path: ./frontend/package-lock.json
-    - name: Install Dependencies
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: ./frontend/package-lock.json
+      - name: Install Dependencies
         run: npm ci
-    - name: Run ESLint Reviewdog
+      - name: Run ESLint Reviewdog
         uses: reviewdog/action-eslint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
