@@ -27,7 +27,7 @@ jobs:
 
       - name: Run ESLint
         run: |
-          npx eslint ../../my-app-vue
+          npx eslint ./my-app-vue
             --config .eslintrc.js
             --ext .js,.jsx,.ts,.tsx,.vue
             --format json
