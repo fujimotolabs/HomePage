@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: my-vue-app/src
+        working-directory: my-vue-app
     steps:
       - uses: actions/checkout@v1
       - name: npm install
@@ -30,3 +30,4 @@ jobs:
           fail_on_error: "true"
       - name: eslint
         run: npm run lint
+        working-directory: src
