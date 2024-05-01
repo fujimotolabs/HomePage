@@ -27,14 +27,10 @@ jobs:
           npm install @typescript-eslint/eslint-plugin@7.8.0
           npm install @typescript-eslint/parser@7.8.0
       - name: Run ESLint
-        run: |
-          npx eslint .
-            --config .eslintrc.js
-            --ext .js,.jsx,.ts,.tsx,.vue
-            --format json
-            --output-file eslint-results.json
-        continue-on-error: true
-        working-directory: my-vue-app/src
+        - name: Run ESLint
+          run: eslint --ext .ts,vue --ignore-path .gitignore . --format json --output-file eslint-results.json
+          continue-on-error: true
+          working-directory: my-vue-app/src
 
       - name: Convert ESLint results to SARIF
         run: |
