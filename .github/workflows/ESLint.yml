@@ -19,7 +19,7 @@ jobs:
         working-directory: my-vue-app
     steps:
     - name: Checkout Repository
-        uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
