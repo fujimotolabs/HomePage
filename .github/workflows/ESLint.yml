@@ -37,4 +37,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           eslint_flags: "./src/**/*.{ts,js,vue}"
-          eslint_path: "$(npm bin)/eslint"
+          eslint_flags: "$(npm bin)/eslint"
