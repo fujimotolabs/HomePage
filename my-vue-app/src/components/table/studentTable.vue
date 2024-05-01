@@ -25,7 +25,7 @@ const sortItems: SortItem[] = [{ key: "grade", order: "desc" }];
           </th>
         </tr>
       </template>
-      <template v-slot:item="{ item, index }">
+      <template #item="{ item, index }">
         <tr
           v-if="item.type === 'Student'"
           :class="{ 'bg-slate-200': index % 2 != 0 }"

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 5173 --host",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview --port 4173 --host "
+    "preview": "vite preview --port 4173 --host ",
+    "lint": "eslint --ext .ts,vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -18,7 +19,12 @@
     "vuetify": "^3.5.17"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.25.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-tsconfig-paths": "^4.3.2",
