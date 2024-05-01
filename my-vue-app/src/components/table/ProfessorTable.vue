@@ -14,18 +14,18 @@ const sortItems: SortItem[] = [{ key: "kanaName", order: "asc" }];
 <template>
   <div>
     <v-data-table-virtual
+      v-model:sort-by="sortItems"
       :headers="headers"
       :items="items"
-      v-model:sort-by="sortItems"
     >
-      <template v-slot:headers>
+      <template #headers>
         <tr class="bg-blue-500">
           <th v-for="header in headers" :key="header.title" class="text-white">
             <span class="font-bold"> {{ header.title }}</span>
           </th>
         </tr>
       </template>
-      <template v-slot:item="{ item, index }">
+      <template #item="{ item, index }">
         <tr
           v-if="item.type === 'Professor'"
           :class="{ 'bg-slate-200': index % 2 != 0 }"
