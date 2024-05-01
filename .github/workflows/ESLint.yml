@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./my-app-vue
+        working-directory: /my-app-vue
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
 
       - name: Run ESLint
         run: |
-          npx eslint ./my-app-vue
+          npx eslint ./src
             --config .eslintrc.js
             --ext .js,.jsx,.ts,.tsx,.vue
             --format json
