@@ -6,31 +6,20 @@ on:
   pull_request:
     branches: [main, develop]
 
-permissions:
-  contents: read
-  security-events: write
-  actions: read
-
+    
 jobs:
   eslint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     defaults:
       run:
         working-directory: my-vue-app
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "npm"
-          cache-dependency-path: ./my-vue-app/package-lock.json
-      - name: npm install
-        run: npm install
-      - name: Run ESLint Reviewdog
-        uses: reviewdog/action-eslint@v1
-        with:
+      - uses: actions/checkout@v4
+      - uses: reviewdog/action-eslint@v1
+          with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          eslint_flags: "./src/**/*.{ts,js,vue}"
+          reporter: github-check
+          eslint_flags: "src/"
