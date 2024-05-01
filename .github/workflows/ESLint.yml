@@ -26,6 +26,8 @@ jobs:
           npm install @vue/eslint-config-typescript@13.0.0
           npm install @typescript-eslint/eslint-plugin@7.8.0
           npm install @typescript-eslint/parser@7.8.0
+        working-directory: my-vue-app/src
+
       - name: Run ESLint
         run: eslint --ext .ts,vue --ignore-path .gitignore . --format json --output-file eslint-results.json
         continue-on-error: true
