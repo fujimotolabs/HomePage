@@ -14,9 +14,6 @@ permissions:
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: my-app-vue
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
