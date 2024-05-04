@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import SideBarItem from "@/components/sidebar/SideBarItem.vue";
 import { RouterView } from "vue-router";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import SideBar from "./components/sidebar/SideBar.vue";
 const drawer = ref(false);
 </script>
 
 <template>
   <v-app>
     <v-layout class="rounded-md overflow-hidden h-screen w-screen">
-      <v-app-bar title="Application bar" />
+      <v-app-bar>
+        <v-app-bar-nav-icon
+          ><button @click="drawer = !drawer">
+            <FontAwesomeIcon icon="list" /></button
+        ></v-app-bar-nav-icon>
+      </v-app-bar>
 
-      <div>
-        <v-navigation-drawer v-model="drawer" temporary>
-          <v-list>
-            <SideBarItem />
-          </v-list>
-        </v-navigation-drawer>
-      </div>
+      <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
       <v-main class="h-full w-full overflow-auto">
         <RouterView v-slot="{ Component, route }">
           <transition
