@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import SideBar from "./components/sidebar/SideBar.vue";
+import { ref } from "vue";
+import SideBarItem from "@/components/sidebar/SideBarItem.vue";
+import { RouterView } from "vue-router";
+const drawer = ref(false);
 </script>
 
 <template>
@@ -7,9 +10,15 @@ import SideBar from "./components/sidebar/SideBar.vue";
     <v-layout class="rounded-md overflow-hidden h-screen w-screen">
       <v-app-bar title="Application bar" />
 
-      <SideBar />
+      <div>
+        <v-navigation-drawer v-model="drawer" temporary>
+          <v-list>
+            <SideBarItem />
+          </v-list>
+        </v-navigation-drawer>
+      </div>
       <v-main class="h-full w-full overflow-auto">
-        <router-view v-slot="{ Component, route }">
+        <RouterView v-slot="{ Component, route }">
           <transition
             enter-active-class="animate__animated animate__backInDown"
             leave-active-class="animate__animated animate__fadeOut"
@@ -18,10 +27,16 @@ import SideBar from "./components/sidebar/SideBar.vue";
               <component :is="Component" />
             </div>
           </transition>
-        </router-view>
+        </RouterView>
       </v-main>
     </v-layout>
   </v-app>
 </template>
 
-<style></style>
+<style scoped>
+@media (max-width: 600px) {
+  .mobile-hide {
+    display: none;
+  }
+}
+</style>
