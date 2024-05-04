@@ -14,7 +14,7 @@ const sortItems: SortItem[] = [{ key: "kanaName", order: "asc" }];
 <template>
   <div>
     <v-data-table-virtual
-      v-model:sort-by="sortItems"
+      :sort-by="sortItems"
       :headers="headers"
       :items="items"
     >

@@ -1,28 +1,36 @@
 <template>
   <div>
-    <div v-for="[path, name] in linkMap" :key="path">
+    <div v-for="route in routes" :key="route.path">
       <v-list-item>
-        <RouterLink :to="path"> {{ name }}</RouterLink>
+        <RouterLink :to="route.path">
+          <div
+            v-if="route.meta?.icon"
+            class="flex , flex-row justify-center gap-5"
+          >
+            <FontAwesomeIcon :icon="route.meta.icon" />
+            {{ route.name }}
+          </div>
+        </RouterLink>
       </v-list-item>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { RouterLink, useRouter } from "vue-router";
 
+declare module "vue-router" {
+  interface RouteMeta {
+    // is optional
+    icon?: string;
+  }
+}
 defineProps<{
   links?: string[];
 }>();
 
-const router = useRouter();
-
-const allLinks: string[] = router.getRoutes().map((route) => route.path);
-const allLinksName = router.getRoutes().map((route) => route.name);
-const linkMap = new Map<string, string>();
-for (let i = 0; i < allLinks.length; i++) {
-  linkMap.set(allLinks[i], allLinksName[i] as string);
-}
+const routes = useRouter().options.routes;
 </script>
 
 <style scoped></style>

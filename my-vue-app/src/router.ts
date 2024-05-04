@@ -6,7 +6,9 @@ const routes = [
       return await import("@/views/HomeContainer.vue");
     },
     name: "home",
-    icon: "md:home",
+    meta: {
+      icon: "home",
+    },
   },
   {
     path: "/Member",
@@ -14,7 +16,9 @@ const routes = [
       return await import("@/views/LabMemberContainer.vue");
     },
     name: "Member",
-    icon: "md:",
+    meta: {
+      icon: "users",
+    },
   },
 ];
 export const router = createRouter({
