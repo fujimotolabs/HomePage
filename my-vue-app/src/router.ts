@@ -5,11 +5,19 @@ const routes = [
     component: async () => {
       return await import("@/views/HomeContainer.vue");
     },
+    name: "home",
+    meta: {
+      icon: "home",
+    },
   },
   {
-    path: "/labMember",
+    path: "/Member",
     component: async () => {
       return await import("@/views/LabMemberContainer.vue");
+    },
+    name: "Member",
+    meta: {
+      icon: "users",
     },
   },
 ];

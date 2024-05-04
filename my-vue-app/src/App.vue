@@ -1,25 +1,24 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { RouterView } from "vue-router";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import SideBar from "./components/sidebar/SideBar.vue";
+const drawer = ref(false);
+</script>
+
 <template>
   <v-app>
     <v-layout class="rounded-md overflow-hidden h-screen w-screen">
-      <v-app-bar title="Application bar" />
+      <v-app-bar>
+        <v-app-bar-nav-icon
+          ><button @click="drawer = !drawer">
+            <FontAwesomeIcon icon="list" /></button
+        ></v-app-bar-nav-icon>
+      </v-app-bar>
 
-      <v-navigation-drawer>
-        <v-list>
-          <v-list-item>
-            <router-link to="/">
-              Go to Home
-            </router-link>
-          </v-list-item>
-          <v-list-item>
-            <router-link to="/labMember">
-              Go to Lab Member
-            </router-link>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-
+      <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
       <v-main class="h-full w-full overflow-auto">
-        <router-view v-slot="{ Component, route }">
+        <RouterView v-slot="{ Component, route }">
           <transition
             enter-active-class="animate__animated animate__backInDown"
             leave-active-class="animate__animated animate__fadeOut"
@@ -28,10 +27,16 @@
               <component :is="Component" />
             </div>
           </transition>
-        </router-view>
+        </RouterView>
       </v-main>
     </v-layout>
   </v-app>
 </template>
 
-<style></style>
+<style scoped>
+@media (max-width: 600px) {
+  .mobile-hide {
+    display: none;
+  }
+}
+</style>

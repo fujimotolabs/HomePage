@@ -10,6 +10,9 @@
     "lint": "eslint --ext .ts,vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
