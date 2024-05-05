@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Professor } from "@/type";
+import { VDataTableVirtual } from "vuetify/lib/components/index.mjs";
 
 defineProps<{
   items: Professor[];
@@ -13,15 +14,16 @@ const sortItems: SortItem[] = [{ key: "kanaName", order: "asc" }];
 </script>
 <template>
   <div>
-    <v-data-table-virtual
-      v-model:sort-by="sortItems"
+    <VDataTableVirtual
+      :sort-by="sortItems"
       :headers="headers"
       :items="items"
+      :mobile="false"
     >
       <template #headers>
         <tr class="bg-blue-500">
           <th v-for="header in headers" :key="header.title" class="text-white">
-            <span class="font-bold"> {{ header.title }}</span>
+            <div class="font-bold">{{ header.title }}</div>
           </th>
         </tr>
       </template>
@@ -35,8 +37,6 @@ const sortItems: SortItem[] = [{ key: "kanaName", order: "asc" }];
           <td>{{ item.researchField }}</td>
         </tr>
       </template>
-    </v-data-table-virtual>
+    </VDataTableVirtual>
   </div>
 </template>
-
-<style lang=""></style>
