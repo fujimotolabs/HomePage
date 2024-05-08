@@ -17,10 +17,10 @@ const drawer = ref(false);
       </v-app-bar>
 
       <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
-      <v-main class="h-full w-full overflow-auto">
+      <v-main class="h-full w-full overflow-auto bg-slate-100">
         <RouterView v-slot="{ Component, route }">
           <transition
-            enter-active-class="animate__animated animate__backInDown"
+            enter-active-class="animate__animated animate__fadeInUp"
             leave-active-class="animate__animated animate__fadeOut"
           >
             <div :key="route.fullPath">
