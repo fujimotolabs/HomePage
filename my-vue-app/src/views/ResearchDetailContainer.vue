@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import AboutPage from "@/components/researchdetail/AboutPage.vue";
-import FujimotoReseach from "@/components/researchdetail/FujimotoReseach.vue";
-import KatumaResearch from "@/components/researchdetail/KatumaResearch.vue";
+import ContentsDetail from "@/components/researchdetail/ContentsDetail.vue";
+import {
+  fujimotoDetail,
+  katumaDetail,
+} from "@/components/researchdetail/content";
 import { ref } from "vue";
 const animation = ref(false);
 
@@ -15,10 +18,18 @@ setTimeout(() => {
     <AboutPage
       :class="{ 'animate__animated animate__fadeInLeftBig': animation }"
     />
-    <FujimotoReseach
+    <ContentsDetail
+      :title="fujimotoDetail.title"
+      :content="fujimotoDetail.content"
+      :projects="fujimotoDetail.projects"
+      :src-image="fujimotoDetail.srcImage"
       :class="{ 'animate__animated animate__fadeInRightBig': animation }"
     />
-    <KatumaResearch
+    <ContentsDetail
+      :title="katumaDetail.title"
+      :content="katumaDetail.content"
+      :projects="katumaDetail.projects"
+      :src-image="katumaDetail.srcImage"
       :class="{ 'animate__animated animate__fadeInLiftBig': animation }"
     />
   </div>
