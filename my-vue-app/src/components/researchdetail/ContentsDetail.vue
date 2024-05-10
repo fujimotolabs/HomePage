@@ -10,17 +10,17 @@ defineProps<{
 </script>
 
 <template>
-  <v-sheet class="w-full h-full p-10" elevation="16">
+  <v-sheet class="w-full h-full" elevation="16">
     <div class="font-bold text-3xl mb-10 text-blue-400 font-sans">
       {{ title }}
     </div>
-    <div class="flex md:flex-row flex-col justify-between">
-      <div class="font-sans text-md text-slate-500 md:w-1/2">
+    <div class="flex md:flex-row flex-col justify-evenly">
+      <div class="font-sans text-lg text-slate-500 md:w-1/2">
         {{ content }}
       </div>
-      <img :src="srcImage" class="md:w-1/2 md:h-2/3" />
+      <img :src="srcImage" class="mobile-layout" />
     </div>
-    <div class="pt-10 flex flex-col gap-y-4">
+    <div class="flex flex-col gap-y-4">
       <div v-for="item in projects" :key="item.projectName">
         <a :href="item.url" class="hover:underline text-blue-700">
           {{ item.projectName }}
@@ -29,4 +29,11 @@ defineProps<{
     </div>
   </v-sheet>
 </template>
-<style></style>
+<style scoped>
+@media (max-width: 768px) {
+  .mobile-layout {
+    width: 200px;
+    height: 300px;
+  }
+}
+</style>

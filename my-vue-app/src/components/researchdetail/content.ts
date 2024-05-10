@@ -1,13 +1,11 @@
 import { ProjectWithUrl } from "@/type";
 
 export const fujimotoDetail: {
-  id: string;
   title: string;
   content: string;
   projects: ProjectWithUrl[];
   srcImage: string;
 } = {
-  id: "fujimoto",
   title: "高性能計算分野(藤本)",
   content: `GPU(Graphics Processing Unit)は本来は描画処理専用のユニットでした．
         ごく最近になって, GPUをC言語でプログラミングして，
@@ -43,13 +41,11 @@ export const fujimotoDetail: {
 };
 
 export const katumaDetail: {
-  id: string;
   title: string;
   content: string;
   projects: ProjectWithUrl[];
   srcImage: string;
 } = {
-  id: "katuma",
   title: "分散計算・モバイルコンピューティング分野(勝間)",
   content: `近年，スマートフォン，スマートウォッチ，ヘッドマウントディスプレイなどの持ち運び可能なコンピュータが普及してきています．
         色々な人が装着しているこれらのコンピュータ，さらには建物に設置してあるようなコンピュータに至るまで，様々なコンピュータを互いに連携させることで，より高度な情報サービスが期待されています．
