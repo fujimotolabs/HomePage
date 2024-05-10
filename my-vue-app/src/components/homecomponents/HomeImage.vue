@@ -13,7 +13,7 @@ defineProps<{
       }"
     >
       <v-sheet elevation="16" class="w-max h-full">
-        <img src="../../../public/lab5-01.png" class="scale-100" />
+        <img src="/lab5-01.png" class="scale-100" />
       </v-sheet>
     </div>
   </div>

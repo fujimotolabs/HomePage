@@ -19,6 +19,7 @@ setTimeout(() => {
       :class="{ 'animate__animated animate__fadeInLeftBig': animation }"
     />
     <ContentsDetail
+      :id="fujimotoDetail.id"
       :title="fujimotoDetail.title"
       :content="fujimotoDetail.content"
       :projects="fujimotoDetail.projects"
@@ -26,6 +27,7 @@ setTimeout(() => {
       :class="{ 'animate__animated animate__fadeInRightBig': animation }"
     />
     <ContentsDetail
+      :id="katumaDetail.id"
       :title="katumaDetail.title"
       :content="katumaDetail.content"
       :projects="katumaDetail.projects"

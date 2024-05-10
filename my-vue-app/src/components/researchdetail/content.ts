@@ -1,11 +1,13 @@
 import { ProjectWithUrl } from "@/type";
 
 export const fujimotoDetail: {
+  id: string;
   title: string;
   content: string;
   projects: ProjectWithUrl[];
   srcImage: string;
 } = {
+  id: "fujimoto",
   title: "高性能計算分野(藤本)",
   content: `GPU(Graphics Processing Unit)は本来は描画処理専用のユニットでした．
         ごく最近になって, GPUをC言語でプログラミングして，
@@ -37,15 +39,17 @@ export const fujimotoDetail: {
         "複素母関数の多倍長精度計算に基づく組み合わせ最適化新解法の並列化",
     },
   ],
-  srcImage: "../../../../public/research01.jpg",
+  srcImage: "/research01.jpg",
 };
 
 export const katumaDetail: {
+  id: string;
   title: string;
   content: string;
   projects: ProjectWithUrl[];
   srcImage: string;
 } = {
+  id: "katuma",
   title: "分散計算・モバイルコンピューティング分野(勝間)",
   content: `近年，スマートフォン，スマートウォッチ，ヘッドマウントディスプレイなどの持ち運び可能なコンピュータが普及してきています．
         色々な人が装着しているこれらのコンピュータ，さらには建物に設置してあるようなコンピュータに至るまで，様々なコンピュータを互いに連携させることで，より高度な情報サービスが期待されています．
@@ -68,5 +72,5 @@ export const katumaDetail: {
         "山林における移動式カメラノードの導入による協調モニタリング方式の開発",
     },
   ],
-  srcImage: "../../../public/research02.jpg",
+  srcImage: "/research02.jpg",
 };

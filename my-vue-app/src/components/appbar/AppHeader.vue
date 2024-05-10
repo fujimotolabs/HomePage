@@ -26,11 +26,7 @@ const goToHome = () => {
       <v-spacer />
 
       <button @click="goToHome()">
-        <img
-          max-height="80px"
-          max-width="300px"
-          src="../../../public/lablogo.gif"
-        />
+        <img max-height="80px" max-width="300px" src="/lablogo.gif" />
       </button>
     </VAppBar>
   </div>
