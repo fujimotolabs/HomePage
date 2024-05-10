@@ -37,5 +37,4 @@ openSHH ダウンロードして、あとは同じ
 `main`ブランチに、PR か PUSH(管理者以外不可)のときに、github/actions にて build および deploy
 
 ## 技術選定
-
-vite + Vue3
+https://github.com/fujimotoLabs/HomePage/issues/34
