@@ -1,8 +1,6 @@
 <script setup lang="ts">
-type ProjectWithUrl = {
-  url: string;
-  projectName: string;
-};
+import { ProjectWithUrl } from "@/type";
+
 const projectWithUrl: ProjectWithUrl[] = [
   {
     url: "https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-23500285/",

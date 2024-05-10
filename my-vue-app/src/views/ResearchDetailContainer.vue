@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AboutPage from "@/components/researchdetail/AboutPage.vue";
 import FujimotoReseach from "@/components/researchdetail/FujimotoReseach.vue";
+import KatumaResearch from "@/components/researchdetail/KatumaResearch.vue";
 import { ref } from "vue";
 const animation = ref(false);
 
@@ -10,12 +11,15 @@ setTimeout(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-y-16">
+  <div v-if="animation" class="flex flex-col gap-y-16">
     <AboutPage
       :class="{ 'animate__animated animate__fadeInLeftBig': animation }"
     />
     <FujimotoReseach
       :class="{ 'animate__animated animate__fadeInRightBig': animation }"
+    />
+    <KatumaResearch
+      :class="{ 'animate__animated animate__fadeInLiftBig': animation }"
     />
   </div>
 </template>
