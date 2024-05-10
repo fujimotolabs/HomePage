@@ -21,11 +21,11 @@ const projectWithUrl: ProjectWithUrl[] = [
 
 <template>
   <v-sheet class="w-full h-full p-10" elevation="16">
-    <div class="font-bold text-3xl mb-10 text-blue-400">
+    <div class="font-bold text-3xl mb-10 text-blue-400 font-sans">
       高性能計算分野(藤本)
     </div>
     <div class="flex md:flex-row flex-col justify-between">
-      <div class="font-sans text-xl text-slate-500">
+      <div class="font-sans text-md text-slate-500 w-1/2">
         GPU(Graphics Processing Unit)は本来は描画処理専用のユニットでした．
         ごく最近になって, GPUをC言語でプログラミングして，
         普通のコンピュータが行うような計算をGPUを使って行えるようになってきました．
@@ -41,7 +41,7 @@ const projectWithUrl: ProjectWithUrl[] = [
         高性能計算分野では，
         主にGPUによる計算の性能をできるだけ高めるような並列プログラミングを研究していきます．
       </div>
-      <img src="../../../public/research01.jpg" width="400px" class="h-52" />
+      <img src="../../../public/research01.jpg" class="w-72 h-52" />
     </div>
     <div class="pt-10 flex flex-col gap-y-4">
       <div v-for="item in projectWithUrl" :key="item.projectName">

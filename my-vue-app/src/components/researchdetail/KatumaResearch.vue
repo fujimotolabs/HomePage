@@ -21,11 +21,11 @@ const projectWithUrl: ProjectWithUrl[] = [
 
 <template>
   <v-sheet class="w-full h-full p-10" elevation="16">
-    <div class="font-bold text-3xl mb-10 text-blue-400">
+    <div class="font-bold text-3xl mb-10 text-blue-400 font-sans">
       分散計算・モバイルコンピューティング分野(勝間)
     </div>
     <div class="flex md:flex-row flex-col justify-between">
-      <div class="font-sans text-xl text-slate-500">
+      <div class="font-sans text-md text-slate-500 w-1/2">
         近年，スマートフォン，スマートウォッチ，ヘッドマウントディスプレイなどの持ち運び可能なコンピュータが普及してきています．
         色々な人が装着しているこれらのコンピュータ，さらには建物に設置してあるようなコンピュータに至るまで，様々なコンピュータを互いに連携させることで，より高度な情報サービスが期待されています．
         例えば，リアルタイムに正確なナビゲーションを行ったり，ヘッドマウントカメラに映った様々な物の詳細な情報を瞬時に提示したり等が期待されていますが，これらを実現するためにはまだまだ多くの課題を解決していかなければいけません．
@@ -34,7 +34,7 @@ const projectWithUrl: ProjectWithUrl[] = [
         hoc
         network），車車間通信などに対して，位置推定，センシング，通信など効率化，高性能化するための方法を研究します．
       </div>
-      <img src="../../../public/research02.jpg" width="400px" class="h-52" />
+      <img src="../../../public/research02.jpg" class="w-1/2 h-52" />
     </div>
     <div class="pt-10 flex flex-col gap-y-4">
       <div v-for="item in projectWithUrl" :key="item.projectName">
