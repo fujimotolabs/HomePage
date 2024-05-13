@@ -9,7 +9,7 @@ import {
 
 <template>
   <div class="flex flex-col gap-y-16">
-    <AboutPage id="fujimoto" />
+    <AboutPage />
     <ContentsDetail
       :title="fujimotoDetail.title"
       :content="fujimotoDetail.content"

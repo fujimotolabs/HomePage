@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { RouterView } from "vue-router";
 import SideBar from "./components/sidebar/SideBar.vue";
 import AppHeader from "./components/appbar/AppHeader.vue";
+import AppFooter from "./components/footerbar/AppFooter.vue";
 const drawer = ref(false);
 </script>
 
@@ -13,16 +14,18 @@ const drawer = ref(false);
     <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
     <v-main class="h-full w-full bg-slate-100">
       <RouterView v-slot="{ Component, route }">
-        <transition
+        <Transition
           leave-active-class="animate__animated animate__fadeOut"
           enter-to-class="animate__animated animate__fadeIn"
           appear
           mode="out-in"
+          :duration="{ enter: 500, leave: 500 }"
         >
-          <div :key="route.fullPath">
+          <div :key="route.fullPath" class="flex flex-col gap-y-10">
             <component :is="Component" />
+            <AppFooter />
           </div>
-        </transition>
+        </Transition>
       </RouterView>
     </v-main>
   </v-app>

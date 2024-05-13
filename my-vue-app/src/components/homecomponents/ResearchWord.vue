@@ -25,7 +25,7 @@ import { RouterLink } from "vue-router";
             実際に高速に動作する並列プログラムを開発するための研究を行っています．
           </v-expansion-panel-text>
           <v-expansion-panel-text>
-            <RouterLink to="/ResearchDetail#fujimoto" class="text-blue-500"
+            <RouterLink to="/ResearchDetail" class="text-blue-500"
               >研究について詳しく
             </RouterLink>
           </v-expansion-panel-text>
