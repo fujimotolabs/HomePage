@@ -35,7 +35,7 @@ defineProps<{
             実際に高速に動作する並列プログラムを開発するための研究を行っています．
           </v-expansion-panel-text>
           <v-expansion-panel-text>
-            <RouterLink to="/" class="text-blue-500"
+            <RouterLink to="/ResearchDetail#fujimoto" class="text-blue-500"
               >研究について詳しく
             </RouterLink>
           </v-expansion-panel-text>
@@ -53,7 +53,7 @@ defineProps<{
             これを実現するためのセンシングや通信に関する様々な研究を行っています．
           </v-expansion-panel-text>
           <v-expansion-panel-text>
-            <RouterLink to="/" class="text-blue-500"
+            <RouterLink to="/ResearchDetail#katuma" class="text-blue-500"
               >研究について詳しく
             </RouterLink>
           </v-expansion-panel-text>

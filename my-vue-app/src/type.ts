@@ -34,3 +34,8 @@ export enum Grade {
   D1 = "D1",
   D2 = "D2",
 }
+
+export type ProjectWithUrl = {
+  url: string;
+  projectName: string;
+};
