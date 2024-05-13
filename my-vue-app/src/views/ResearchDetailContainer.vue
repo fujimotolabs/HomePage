@@ -5,26 +5,16 @@ import {
   fujimotoDetail,
   katumaDetail,
 } from "@/components/researchdetail/content";
-import { ref } from "vue";
-const animation = ref(false);
-
-setTimeout(() => {
-  animation.value = true;
-}, 1000);
 </script>
 
 <template>
-  <div v-if="animation" class="flex flex-col gap-y-16">
-    <AboutPage
-      id="fujimoto"
-      :class="{ 'animate__animated animate__fadeInLeftBig': animation }"
-    />
+  <div class="flex flex-col gap-y-16">
+    <AboutPage id="fujimoto" />
     <ContentsDetail
       :title="fujimotoDetail.title"
       :content="fujimotoDetail.content"
       :projects="fujimotoDetail.projects"
       :src-image="fujimotoDetail.srcImage"
-      :class="{ 'animate__animated animate__fadeInRightBig': animation }"
     />
     <ContentsDetail
       id="katuma"
@@ -32,7 +22,6 @@ setTimeout(() => {
       :content="katumaDetail.content"
       :projects="katumaDetail.projects"
       :src-image="katumaDetail.srcImage"
-      :class="{ 'animate__animated animate__fadeInLiftBig': animation }"
     />
   </div>
 </template>
