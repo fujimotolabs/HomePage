@@ -17,7 +17,7 @@ const goToHome = () => {
 
 <template>
   <div>
-    <VAppBar color="#d3d3d3">
+    <VAppBar color="#f8f8ff">
       <v-app-bar-nav-icon>
         <button @click="emits('update:drawer', !drawer)">
           <FontAwesomeIcon icon="list" />
