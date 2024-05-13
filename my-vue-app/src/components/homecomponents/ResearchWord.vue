@@ -2,21 +2,11 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { RouterLink } from "vue-router";
-
-defineProps<{
-  renderingAbout: boolean;
-}>();
 </script>
 
 <template>
   <div>
-    <v-sheet
-      elevation="16"
-      class="w-full h-full mb-16"
-      :class="{
-        'animate__animated animate__fadeInLeftBig': renderingAbout,
-      }"
-    >
+    <v-sheet elevation="16" class="w-full h-full mb-16">
       <div class="font-bold text-3xl text-teal-700 m-10">Research Word</div>
       <v-expansion-panels multiple>
         <v-expansion-panel>
