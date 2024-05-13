@@ -8,20 +8,23 @@ const drawer = ref(false);
 
 <template>
   <v-app>
-    <v-layout class="rounded-md overflow-hidden h-screen w-screen">
-      <AppHeader v-model:drawer="drawer" />
+    <AppHeader v-model:drawer="drawer" />
 
-      <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
-      <v-main class="h-full w-full overflow-auto bg-slate-100">
-        <RouterView v-slot="{ Component, route }">
-          <transition leave-active-class="animate__animated animate__fadeOut">
-            <div :key="route.fullPath">
-              <component :is="Component" />
-            </div>
-          </transition>
-        </RouterView>
-      </v-main>
-    </v-layout>
+    <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
+    <v-main class="h-full w-full bg-slate-100">
+      <RouterView v-slot="{ Component, route }">
+        <transition
+          leave-active-class="animate__animated animate__fadeOut"
+          enter-to-class="animate__animated animate__fadeIn"
+          appear
+          mode="out-in"
+        >
+          <div :key="route.fullPath">
+            <component :is="Component" />
+          </div>
+        </transition>
+      </RouterView>
+    </v-main>
   </v-app>
 </template>
 
