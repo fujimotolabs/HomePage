@@ -1,35 +1,33 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { RouterView } from "vue-router";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import SideBar from "./components/sidebar/SideBar.vue";
+import AppHeader from "./components/appbar/AppHeader.vue";
+import AppFooter from "./components/footerbar/AppFooter.vue";
 const drawer = ref(false);
 </script>
 
 <template>
   <v-app>
-    <v-layout class="rounded-md overflow-hidden h-screen w-screen">
-      <v-app-bar>
-        <v-app-bar-nav-icon
-          ><button @click="drawer = !drawer">
-            <FontAwesomeIcon icon="list" /></button
-        ></v-app-bar-nav-icon>
-      </v-app-bar>
+    <AppHeader v-model:drawer="drawer" />
 
-      <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
-      <v-main class="h-full w-full overflow-auto bg-slate-100">
-        <RouterView v-slot="{ Component, route }">
-          <transition
-            enter-active-class="animate__animated animate__fadeInUp"
-            leave-active-class="animate__animated animate__fadeOut"
-          >
-            <div :key="route.fullPath">
-              <component :is="Component" />
-            </div>
-          </transition>
-        </RouterView>
-      </v-main>
-    </v-layout>
+    <SideBar :drawer="drawer" @update:drawer="drawer = !drawer" />
+    <v-main class="h-full w-full bg-slate-100">
+      <RouterView v-slot="{ Component, route }">
+        <Transition
+          leave-active-class="animate__animated animate__fadeOut"
+          enter-to-class="animate__animated animate__fadeIn"
+          class="duration-500"
+          appear
+          mode="out-in"
+        >
+          <div :key="route.fullPath" class="flex flex-col gap-y-10">
+            <component :is="Component" />
+            <AppFooter />
+          </div>
+        </Transition>
+      </RouterView>
+    </v-main>
   </v-app>
 </template>
 

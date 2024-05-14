@@ -2,21 +2,11 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { RouterLink } from "vue-router";
-
-defineProps<{
-  renderingAbout: boolean;
-}>();
 </script>
 
 <template>
   <div>
-    <v-sheet
-      elevation="16"
-      class="w-full h-full mb-16"
-      :class="{
-        'animate__animated animate__fadeInLeftBig': renderingAbout,
-      }"
-    >
+    <v-sheet elevation="16" class="w-full h-full mb-16">
       <div class="font-bold text-3xl text-teal-700 m-10">Research Word</div>
       <v-expansion-panels multiple>
         <v-expansion-panel>
@@ -35,7 +25,7 @@ defineProps<{
             実際に高速に動作する並列プログラムを開発するための研究を行っています．
           </v-expansion-panel-text>
           <v-expansion-panel-text>
-            <RouterLink to="/" class="text-blue-500"
+            <RouterLink to="/ResearchDetail" class="text-blue-500"
               >研究について詳しく
             </RouterLink>
           </v-expansion-panel-text>
@@ -53,7 +43,7 @@ defineProps<{
             これを実現するためのセンシングや通信に関する様々な研究を行っています．
           </v-expansion-panel-text>
           <v-expansion-panel-text>
-            <RouterLink to="/" class="text-blue-500"
+            <RouterLink to="/ResearchDetail#katuma" class="text-blue-500"
               >研究について詳しく
             </RouterLink>
           </v-expansion-panel-text>
