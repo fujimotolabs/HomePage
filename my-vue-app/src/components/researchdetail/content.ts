@@ -1,4 +1,6 @@
 import { ProjectWithUrl } from "@/type";
+import research01 from "public/research01.jpg";
+import research02 from "public/research02.jpg";
 
 export const fujimotoDetail: {
   title: string;
@@ -37,7 +39,7 @@ export const fujimotoDetail: {
         "複素母関数の多倍長精度計算に基づく組み合わせ最適化新解法の並列化",
     },
   ],
-  srcImage: "/research01.jpg",
+  srcImage: research01,
 };
 
 export const katumaDetail: {
@@ -68,5 +70,5 @@ export const katumaDetail: {
         "山林における移動式カメラノードの導入による協調モニタリング方式の開発",
     },
   ],
-  srcImage: "/research02.jpg",
+  srcImage: research02,
 };
