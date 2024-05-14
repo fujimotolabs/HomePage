@@ -1,13 +1,17 @@
+name: Assign Author
+
 on:
   pull_request:
     types: [opened]
-name: Pull Request
+
 jobs:
-  assignAuthor:
-    name: Assign author to PR
+  assign-author:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign author to PR
-        uses: technote-space/assign-author@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Assign Author
+        uses: technote-space/assign-author@v1.6.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
