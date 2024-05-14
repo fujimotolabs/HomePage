@@ -17,9 +17,9 @@ const drawer = ref(false);
         <Transition
           leave-active-class="animate__animated animate__fadeOut"
           enter-to-class="animate__animated animate__fadeIn"
+          class="duration-500"
           appear
           mode="out-in"
-          :duration="{ enter: 500, leave: 500 }"
         >
           <div :key="route.fullPath" class="flex flex-col gap-y-10">
             <component :is="Component" />
