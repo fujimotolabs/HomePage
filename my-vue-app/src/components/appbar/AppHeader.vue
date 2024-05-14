@@ -17,16 +17,16 @@ const goToHome = () => {
 
 <template>
   <div>
-    <VAppBar color="#e0ffff">
+    <VAppBar color="#f8f8ff">
       <v-app-bar-nav-icon>
         <button @click="emits('update:drawer', !drawer)">
           <FontAwesomeIcon icon="list" />
         </button>
       </v-app-bar-nav-icon>
-      <v-spacer />
 
+      <v-spacer />
       <button @click="goToHome()">
-        <img max-height="80px" max-width="300px" src="/lablogo.gif" />
+        <img class="scale-50" src="/lablogo.gif" />
       </button>
     </VAppBar>
   </div>
