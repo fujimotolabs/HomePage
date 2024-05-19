@@ -10,12 +10,12 @@ const decodeDateToString = (date: Date) => {
 </script>
 
 <template>
-  <v-sheet class="p-6 md:w-1/4 h-80 overflow-hidden">
+  <v-sheet class="p-6 md:w-1/4 h-min overflow-hidden">
     <div class="font-bold text-xl font-sans border-t-4 border-blue-500 w-full">
       News
     </div>
     <div v-for="news in someNews" :key="decodeDateToString(news.createdAt)">
-      <div class="gird grid-flow-col border-b-2 border-b-slate-300">
+      <div class="gird grid-flow-col border-b-2 border-b-slate-300 m-3">
         <p>{{ decodeDateToString(news.createdAt) }}</p>
         <router-link v-if="news.url" :to="news.url">
           <p>{{ news.title }}</p>
