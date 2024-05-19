@@ -17,7 +17,10 @@ const decodeDateToString = (date: Date) => {
     <div v-for="news in someNews" :key="decodeDateToString(news.createdAt)">
       <div class="flex flex-row w-full justify-around gap-5">
         <p>{{ decodeDateToString(news.createdAt) }}</p>
-        <p class="truncate">{{ news.title }}</p>
+        <router-link v-if="news.url" :to="news.url">
+          <p class="truncate">{{ news.title }}</p>
+        </router-link>
+        <p v-else>{{ news.title }}</p>
       </div>
     </div>
   </v-sheet>
