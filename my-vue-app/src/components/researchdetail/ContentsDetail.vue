@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ProjectWithUrl } from "@/type";
-
 defineProps<{
   title: string;
   content: string;
